@@ -98,39 +98,6 @@ body#about           a#nav_about {
 }
 </style>
 
-<script type="text/javascript">
-"use strict";
-
-require(['src/config'], function () {
-	require(
-			[	'src/browserCheck',
-				'src/urlUtils',
-				'jquery',
-				'jquery.ui'
-			],
-			function (
-				CSLEDIT_browserCheck,
-				CSLEDIT_urlUtils
-			) {
-		$('document').ready( function() {
-			if (CSLEDIT_browserCheck.isCompatible()) {
-
-				// Setup uservoice feedback tag
-				var uvOptions = {};
-				(function() {
-				var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-					uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/oO7BJ8Bejbo6PLFoP4M4Q.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-				})();
-			} else {
-				$('#unsupportedBrowserMessage').css("display", "block").html(
-					'<span>Unsupported browser detected, please use the latest <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a> or <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a></span>');
-			}
-		});
-	});
-});
-</script>
-
 <div id="unsupportedBrowserMessage">
 	<!--[if IE]>
 	<span>Unsupported browser detected, please use the latest <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a> or <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a></span>
